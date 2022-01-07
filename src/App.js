@@ -13,6 +13,7 @@ import {
 } from 'react-router-dom';
 import React from 'react';
 import SinglePostPage from './features/posts/SinglePostPage';
+import EditPostForm from './features/posts/EditPostForm';
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
               )}
             />
             <Route exact path="/posts/:postId" component={SinglePostPage} />
+            <Route exact path="/posts/:postId/edit" component={EditPostForm} />
             <Redirect to="/" />
           </Switch>
         </div>
