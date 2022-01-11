@@ -3,9 +3,7 @@ import { createSlice, nanoid } from "@reduxjs/toolkit";
 const postsSlice = createSlice({
     name: 'posts',
     initialState: [
-        { id: '1', title: 'First Post!', content: 'Hello!'},
-        { id: '2', title: 'Second Post', content: 'More text'},
-        { id: '3', title: 'Third Post', content: 'More text another'}
+        { id: '1', title: 'First Post!', content: 'Hello!', user: 1},        
     ],
     reducers: {
 

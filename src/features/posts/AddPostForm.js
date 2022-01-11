@@ -1,6 +1,7 @@
 import { nanoid } from "@reduxjs/toolkit";
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { addText } from "../text/textSlice";
 import { postAdded } from "./postsSlice";
 
 const AddPostForm = () => {
@@ -17,24 +18,18 @@ const AddPostForm = () => {
     const onAuthorChanged = e => setUserId(e.target.value)
 
     const onSavePostClicked = () => {
-        dispatch(
-            postAdded({
-                id: nanoid(),
-                title,
-                content,
-                userId
-            })
-        )
+        dispatch(postAdded(title, content,userId))
 
         setTitle('')
         setContent('')
+        setUserId('')
     }
 
     const canSave = Boolean(title) && Boolean(content) && Boolean(userId)
 
     const usersOptions = users.map(user => (
         <option key={user.id} value={user.id}>
-        {user.name}
+            {user.name}
         </option>
     ))
 
@@ -51,11 +46,12 @@ const AddPostForm = () => {
                     className="form-control"
                 />
                 <br />
-                <label htmlFor="postAuthor">Author:</label>
+                <label htmlFor="postAuthor">Author: </label>
                 <select id="postAuthor" value={userId} onChange={onAuthorChanged} className="form-control">
                     <option value=""></option>
                     {usersOptions}
                 </select>
+                <br/>
                 <label htmlFor="postContent">Content: </label>
                 <textarea
                     id="postContent"
