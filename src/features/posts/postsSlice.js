@@ -1,10 +1,14 @@
 import { createSlice, nanoid } from "@reduxjs/toolkit";
 
+const initialState = {
+    posts: [],
+    status: 'idle',
+    error: null 
+}
+
 const postsSlice = createSlice({
     name: 'posts',
-    initialState: [
-        { id: '1', title: 'First Post!', content: 'Hello!', user: 1},        
-    ],
+    initialState,
     reducers: {
 
         postAdded: {
@@ -12,7 +16,7 @@ const postsSlice = createSlice({
                 state.push(action.payload)
             },
             prepare(title, content , userId){
-                return{
+                return {
                     payload: {
                         id: nanoid(),
                         title,
