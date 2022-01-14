@@ -1,7 +1,5 @@
-import { nanoid } from "@reduxjs/toolkit";
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addText } from "../text/textSlice";
 import { postAdded } from "./postsSlice";
 
 const AddPostForm = () => {
