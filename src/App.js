@@ -1,12 +1,14 @@
 import './App.css';
 import React from 'react';
-import PostsList from './components/PostsList';
+import Users from './components/Users';
 
 function App() {
   return (
-      <div className='App'>        
-        <h1>Hello World</h1>
-        <PostsList />
+      <div className='App'>
+        <div className='container'>
+          <h1>Hello World</h1>
+          <Users />
+        </div>    
       </div>  
   );
 }
