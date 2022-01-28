@@ -1,5 +1,5 @@
 import React from 'react'
-import {connect, useSelector} from 'react-redux';
+import {connect} from 'react-redux';
 import {getUsers} from '../store/actions/usersActions'
 
  class Users extends React.Component {
