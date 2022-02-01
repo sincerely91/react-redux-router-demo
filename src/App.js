@@ -9,7 +9,7 @@ function App() {
         <div className='container'>
           <h1>Users</h1>
           <Users />
-          <h1>Posts</h1>
+          <h1> All Posts</h1>
           <Posts />
         </div>    
       </div>  
