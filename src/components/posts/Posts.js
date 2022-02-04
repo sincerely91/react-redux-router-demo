@@ -1,6 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux';
-import getPosts from '../store/actions/postsActions';
+import getPosts from '../../store/actions/postsActions';
+import PostAdd from './PostAdd';
 
 class Posts extends React.Component {
 
@@ -10,13 +11,14 @@ class Posts extends React.Component {
 
     render() {
         const {posts} = this.props.posts
-
         
         return (
             <div className="container">
+                <PostAdd />
+                <h1>Available Posts</h1>
                 {posts.map(u => 
                      <React.Fragment key={u.id}>
-                         <h6 >{u.title}</h6> 
+                         <h6 >{u.id}. {u.title}</h6> 
                      </React.Fragment>
                 )}
             </div>
