@@ -10,8 +10,7 @@ class Posts extends React.Component {
     }
 
     render() {
-        const {posts} = this.props.posts
-        
+        const {posts} = this.props.posts        
         return (
             <div className="container">
                 <PostAdd />

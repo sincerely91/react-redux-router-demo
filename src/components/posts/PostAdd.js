@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { ADD_POST } from "../../store/types";
+import { addPost } from "../../store/actions/postsActions";
 
 const PostAdd = () => {
     const [title, setTitle] = useState('');
@@ -22,11 +23,22 @@ const PostAdd = () => {
 
     const handleSubmit = () => {
         if (title && body) {
-            dispatch({
-                type: ADD_POST,
-                payload: { userId: 234, id: 101, title, body }
-            })
-            //history.push('/posts')
+            // dispatch({
+            //     type: ADD_POST,
+            //     payload: { userId: 234, id: 101, title, body }
+            // })
+
+            const formdata = {
+                userId: 1, 
+                title, 
+                body 
+            }
+
+            addPost(formdata)
+
+            history.push('/posts')
+            setTitle("");
+            setBody("");
         }
     }
 

@@ -1,4 +1,4 @@
-import {GET_POSTS, POST_ERROR} from '../types';
+import {ADD_POST, GET_POSTS, POST_ERROR} from '../types';
 import axios from 'axios';
 
 const getPosts = () => {
@@ -19,4 +19,11 @@ const getPosts = () => {
     }
     
 }
+
+
+export const addPost = (formdata) => {    
+    console.log(formdata);    
+}
+
+
 export default getPosts;
