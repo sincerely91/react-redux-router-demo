@@ -1,12 +1,14 @@
 import './App.css';
 import React from 'react';
-//import Users from './components/Users';
 import Posts from './components/posts/Posts';
 import Header from './components/Header';
 import Home from './components/Home';
 import About from './components/About';
+import Users from './components/users/Users';
+import Login from './components/auth/Login';
 
 import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import Register from './components/auth/Register';
 
 function App() {
   return (
@@ -18,8 +20,17 @@ function App() {
               <Route path="/posts">
                 <Posts />
               </Route>
+              <Route path="/users">
+                <Users />
+              </Route>
               <Route path="/about">
-               <About />
+                <About />
+              </Route>
+              <Route path="/login">
+                <Login />
+              </Route>
+              <Route path="/register">
+                <Register />
               </Route>
               <Route path="/">
                 <Home />
