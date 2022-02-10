@@ -15,6 +15,7 @@ const Users = () => {
 
     const listItems = users.users.map((user) => {
         return <li>{user.name}</li>
+        
     })
 
 
