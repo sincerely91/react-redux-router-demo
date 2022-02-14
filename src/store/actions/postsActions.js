@@ -20,9 +20,25 @@ const getPosts = () => {
     
 }
 
-
-export const addPost = (formdata) => {    
-    console.log(formdata);    
+export const addPost = (formdata) => {
+    return async (dispatch) => {
+        try {
+            axios.post('https://jsonplaceholder.typicode.com/posts', formdata)
+            .then((res) => {
+                //console.log(res.data);
+                dispatch({
+                    type: ADD_POST,
+                    payload: res.data
+                })
+            })
+        } catch (error) {
+            dispatch( {
+                type: POST_ERROR,
+                payload: console.log(error),
+            })
+        }
+       
+    }
 }
 
 

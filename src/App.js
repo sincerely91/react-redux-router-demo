@@ -9,6 +9,7 @@ import Login from './components/auth/Login';
 
 import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import Register from './components/auth/Register';
+import Items from './components/items/Items';
 
 function App() {
   return (
@@ -25,6 +26,9 @@ function App() {
               </Route>
               <Route path="/about">
                 <About />
+              </Route>
+              <Route path="/items">
+                <Items />
               </Route>
               <Route path="/login">
                 <Login />

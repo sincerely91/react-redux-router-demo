@@ -5,6 +5,7 @@ const initialState = {
     posts: [],
     loading: true
 }
+
 export default function(state = initialState, action ){
     switch (action.type) {
 
@@ -21,8 +22,6 @@ export default function(state = initialState, action ){
             loading: false
         }
 
-
-        
         default: return state            
             
     }
