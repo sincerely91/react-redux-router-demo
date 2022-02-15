@@ -1,8 +1,12 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import { getLoginUser } from "../../store/actions/authActions";
 
 const Login = () => {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
+    const { login_status } = useSelector(state => state.auth)
 
     const handleEmail = (e) => {
         setEmail(e.target.value)
@@ -11,6 +15,20 @@ const Login = () => {
     const handlePassword = (e) => {
         setPassword(e.target.value)
     }
+
+    const dispatch = useDispatch();
+    const history = useHistory();
+
+    const handleSubmit = () => {
+        const formdata = {
+            email: email,
+            password: password 
+        }
+        dispatch(getLoginUser(formdata))
+
+        history.push('/dashboard')
+    }
+
 
     return (
         <div>
@@ -24,7 +42,7 @@ const Login = () => {
                     <label for="exampleInputPassword1" className="form-label">Password</label>
                     <input type="password" value={password} onChange={(e) => handlePassword(e)}  className="form-control" id="exampleInputPassword1" />
                 </div>
-                <button type="button" className="btn btn-primary">Submit</button>
+                <button type="button" onClick={handleSubmit} className="btn btn-primary">Submit</button>
             </form>
         </div>
     )

@@ -10,6 +10,7 @@ import Login from './components/auth/Login';
 import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import Register from './components/auth/Register';
 import Items from './components/items/Items';
+import Dashboard from './components/user/Dashboard';
 
 function App() {
   return (
@@ -36,9 +37,10 @@ function App() {
               <Route path="/register">
                 <Register />
               </Route>
+              <Route path="/dashboard" component={Dashboard} />
               <Route path="/">
                 <Home />
-              </Route>
+              </Route>             
             </Switch>            
           </div>    
         </Router>       
