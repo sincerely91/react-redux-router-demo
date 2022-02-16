@@ -37,7 +37,7 @@ const PostAdd = () => {
                     <input type="text" value={title} onChange={handleTitle} className="form-control" id="title" name="text" required />
                 </div>
                 <div className="mb-3 mt-3">
-                    <label for="body">Body:</label>
+                    <label for="body">Body/Discription:</label>
                     <textarea className="form-control" value={body} onChange={handleBody}  rows="2" id="body" name="text" required></textarea>
                 </div>               
                 <button type="button" onClick={handleSubmit} className="btn btn-primary float-end">Add Post</button>
