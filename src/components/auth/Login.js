@@ -20,10 +20,12 @@ const Login = () => {
     const history = useHistory();
 
     const handleSubmit = () => {
+        
         const formdata = {
             email: email,
             password: password 
         }
+        
         dispatch(getLoginUser(formdata))
 
         history.push('/dashboard')
