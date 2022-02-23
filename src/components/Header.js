@@ -12,10 +12,8 @@ const Header = () => {
     const logout = () => {
         dispatch(logoutUser())
     }
-    
 
-    return (
-        
+    return (        
         <nav className="navbar navbar-expand-sm bg-dark navbar-dark">
             <a className="navbar-brand" href="#"><img src="logo.png" className="app-logo"/></a>        
             <ul className="navbar-nav me-auto">
@@ -40,7 +38,7 @@ const Header = () => {
                 <ul className="navbar-nav justify-content-end">
                     <li className="nav-item">
                         <Link to="/dashboard" className="nav-link">
-                            {user.email}
+                            {user.username}
                         </Link>                       
                     </li>
                     <li className="nav-item">

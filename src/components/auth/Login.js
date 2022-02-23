@@ -1,12 +1,11 @@
-import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import { getLoginUser } from "../../store/actions/authActions";
 
 const Login = () => {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
-    const { login_status } = useSelector(state => state.auth)
 
     const handleEmail = (e) => {
         setEmail(e.target.value)
@@ -19,15 +18,12 @@ const Login = () => {
     const dispatch = useDispatch();
     const history = useHistory();
 
-    const handleSubmit = () => {
-        
+    const handleSubmit = () => {        
         const formdata = {
-            email: email,
+            username: email,
             password: password 
-        }
-        
+        }        
         dispatch(getLoginUser(formdata))
-
         history.push('/dashboard')
     }
 
