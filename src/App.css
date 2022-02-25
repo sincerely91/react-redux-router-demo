@@ -1,3 +1,29 @@
 .app-logo {
     height: 50px;
 }
+
+.slick-prev:before,
+.slick-next:before {
+  color: red!important;
+}
+.slick-slide > div {
+    position: relative;
+}
+.slider-text {
+    color: rgb(247, 220, 220);
+    position: absolute;
+    z-index: 99;
+    height: 100%;
+    width: 100%;
+    top: 50%;
+}
+
+.login-form{
+    width: 40vw;
+    margin: auto;
+}
+
+.register-form{
+    width: 40vw;
+    margin: auto;
+}
