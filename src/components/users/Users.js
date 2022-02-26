@@ -11,13 +11,10 @@ const Users = () => {
         dispatch(getUsers());        
     },[])
 
-    
 
     const listItems = users.users.map((user) => {
-        return <li>{user.name}</li>
-        
+        return <li>{user.name}</li>        
     })
-
 
     return (
         <div className="row">

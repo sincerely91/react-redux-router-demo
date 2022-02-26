@@ -11,13 +11,14 @@ import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import Register from './components/auth/Register';
 import Items from './components/items/Items';
 import Dashboard from './components/user/Dashboard';
+import Footer from './components/Footer';
 
 function App() {
   return (
       <div className='App'>
         <Router>
           <Header />
-          <div className='container'>
+          <div className='container-fluid'>
             <Switch>
               <Route path="/posts">
                 <Posts />
@@ -42,7 +43,8 @@ function App() {
                 <Home />
               </Route>             
             </Switch>            
-          </div>    
+          </div>
+          <Footer />    
         </Router>       
       </div>  
   );

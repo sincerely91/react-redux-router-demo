@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css";
+import Services from './HomeSections/Services';
 
 const Home = () => {
 
@@ -14,25 +15,26 @@ const Home = () => {
         slidesToScroll: 1
     };
 
-    return (
-       
-        <div className='row text-center mt-1'>
-            <Slider {...settings}>
-                <div>
-                    <img src='slide1.jpg' style={{height: "500px", width: "100vw"}}/>
-                    <div className="slider-text">
-                        <h1>Lorem ipsum</h1>
+    return (   
+        <div className='container-fluid'>
+            <div className='row text-center mt-1'>
+                <Slider {...settings}>
+                    <div>
+                        <img src='slide1.jpg' style={{height: "550px", width: "100vw"}}/>
+                        <div className="slider-text">
+                            <h1>Lorem ipsum</h1>
+                        </div>
                     </div>
-                </div>
-                <div>
-                    <img src='slide2.jpg' style={{height: "500px", width: "100vw"}}/>
-                    <div className="slider-text">
-                        <h1>Lorem ipsum</h1>
+                    <div>
+                        <img src='slide2.jpg' style={{height: "550px", width: "100vw"}}/>
+                        <div className="slider-text">
+                            <h1>Lorem ipsum</h1>
+                        </div>
                     </div>
-                </div>
-            </Slider>
-            
-            <h1>Welcome to my Blog Site</h1>
+                </Slider>
+            </div>    
+        
+            <Services />
         </div>        
     )
 }

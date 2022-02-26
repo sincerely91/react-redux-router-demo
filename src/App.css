@@ -2,10 +2,21 @@
     height: 50px;
 }
 
-.slick-prev:before,
-.slick-next:before {
-  color: red!important;
+.slick-prev {
+    left: 25px !important;
+    z-index: 99;
 }
+
+.slick-next {
+    right: 40px !important;
+    z-index: 99;
+}
+
+.slick-prev:before, .slick-next:before {
+  color: rgb(10, 1, 1)!important;
+  font-size: 35px !important;
+}
+
 .slick-slide > div {
     position: relative;
 }
@@ -26,4 +37,16 @@
 .register-form{
     width: 40vw;
     margin: auto;
+}
+
+.section-services{
+    margin-top: 50px;
+    text-align: center;
+}
+
+.section-footer {
+    margin-top: 200px;
+    background-color: rgb(49, 47, 47);
+    color: rgb(249, 252, 255);    
+    width: 100%; 
 }

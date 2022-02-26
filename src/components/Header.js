@@ -14,7 +14,7 @@ const Header = () => {
     }
 
     return (        
-        <nav className="navbar navbar-expand-sm bg-dark navbar-dark">
+        <nav className="navbar navbar-expand-sm bg-light navbar-light">
             <a className="navbar-brand" href="#"><img src="logo.png" className="app-logo"/></a>        
             <ul className="navbar-nav me-auto">
                 <li className="nav-item">
