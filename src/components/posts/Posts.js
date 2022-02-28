@@ -2,6 +2,7 @@ import React from 'react'
 import {connect} from 'react-redux';
 import getPosts from '../../store/actions/postsActions';
 //import PostAdd from './PostAdd';
+import PostModal from '../../elements/modals/PostModal';
 
 class Posts extends React.Component {
 
@@ -14,9 +15,18 @@ class Posts extends React.Component {
         return (
             <div className="container">
                 {/* <PostAdd /> */}
-                <div className="mb-4">
-                    <h1>Available Posts</h1>
-                </div>                
+                <div className='row mb-4 mt-2'>
+                    <div className="col-md-6">
+                        <h1>Available Posts</h1>                    
+                    </div>
+                    <div className="col-md-6">
+                        <button type="button" className="btn btn-primary float-end" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            Add Post
+                        </button>
+                        <PostModal />
+                    </div>
+                </div>
+                             
                 {posts.map(u => 
                     <React.Fragment key={u.id}>
                         <h3 >{u.title}</h3>
