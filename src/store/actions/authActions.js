@@ -33,7 +33,7 @@ export const getLoginUser = (formdata) => {
            })
         }
         */
-        localStorage.setItem("email", formdata.email)
+        sessionStorage.setItem("token", formdata.token)
         dispatch({
             type: LOGIN,
             payload: formdata
@@ -43,7 +43,7 @@ export const getLoginUser = (formdata) => {
 
 export const logoutUser = () => {
     return async (dispatch) => {
-        localStorage.removeItem("email")
+        sessionStorage.removeItem("token")
         dispatch({
             type: LOGOUT,
             payload: []

@@ -35,7 +35,7 @@ const Header = () => {
             </ul>            
                 
             {login_status ? (
-                <ul className="navbar-nav justify-content-end">
+                <ul className="navbar-nav ">
                     <li className="nav-item">
                         <Link to="/dashboard" className="nav-link">
                             {user.username}

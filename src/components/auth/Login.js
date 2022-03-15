@@ -18,13 +18,17 @@ const Login = () => {
     const dispatch = useDispatch();
     const history = useHistory();
 
-    const handleSubmit = () => {        
+    const handleSubmit = () => {
+
         const formdata = {
             username: email,
-            password: password 
-        }        
+            password: password,
+            token:  'hjghjghjghjghjghjhfjewewewjjjgjghgh'
+        }
+            
         dispatch(getLoginUser(formdata))
         history.push('/dashboard')
+
     }
 
 

@@ -23,7 +23,7 @@ const PostAdd = () => {
 
             dispatch(addPost({ userId: 234, id: 101, title, body }));
 
-            //history.push('/posts')
+            history.push('/posts')
             setTitle("");
             setBody("");
         }
