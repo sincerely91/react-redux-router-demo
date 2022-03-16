@@ -37,15 +37,23 @@ const Header = () => {
             {login_status ? (
                 <ul className="navbar-nav ">
                     <li className="nav-item">
-                        <Link to="/dashboard" className="nav-link">
-                            {user.username}
-                        </Link>                       
-                    </li>
-                    <li className="nav-item">
-                        <Link to="/" className="nav-link" onClick={logout}>
-                            Logout
-                        </Link>                       
-                    </li>
+                        <div class="dropdown">
+                            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                                {user.username}
+                            </a>
+
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                <li className="nav-item">
+                                    <Link to="/" className="dropdown-item" onClick={logout}>
+                                        Logout
+                                    </Link>
+                                </li>
+                            </ul>
+                        </div>                      
+                    </li>                    
                 </ul>
             ) : (
                 <ul className="navbar-nav justify-content-end">

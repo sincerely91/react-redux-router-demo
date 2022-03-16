@@ -17,8 +17,8 @@ function App() {
   return (
       <div className='App'>
         <Router>
-          <Header />
           <div className='container-fluid'>
+            <Header />
             <Switch>
               <Route path="/posts">
                 <Posts />
