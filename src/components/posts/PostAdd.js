@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { useHistory } from "react-router-dom";
+//import { useHistory } from "react-router-dom";
 import { addPost } from "../../store/actions/postsActions";
+import { useNavigate } from "react-router-dom";
 
 const PostAdd = () => {
     const [title, setTitle] = useState('');
@@ -14,8 +15,10 @@ const PostAdd = () => {
     const handleBody = (e) => {
         setBody(e.target.value)
     }
+    const navigate = useNavigate()
+    
 
-    const history = useHistory()
+    //const history = useHistory()
     const dispatch = useDispatch()
 
     const handleSubmit = () => {
@@ -23,7 +26,8 @@ const PostAdd = () => {
 
             dispatch(addPost({ userId: 234, id: 101, title, body }));
 
-            history.push('/posts')
+            //history.push('/posts')
+            navigate('/posts')
             setTitle("");
             setBody("");
         }

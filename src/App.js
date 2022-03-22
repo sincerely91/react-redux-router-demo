@@ -1,51 +1,36 @@
 import './App.css';
 import React from 'react';
 import Posts from './components/posts/Posts';
+import Post from './components/posts/Post';
 import Header from './components/Header';
 import Home from './components/Home';
 import About from './components/About';
-import Users from './components/users/Users';
+// import Users from './components/users/Users';
 import Login from './components/auth/Login';
-
-import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import Register from './components/auth/Register';
-import Items from './components/items/Items';
+// import Items from './components/items/Items';
 import Dashboard from './components/user/Dashboard';
 import Footer from './components/Footer';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
   return (
-      <div className='App'>
-        <Router>
-          <div className='container-fluid'>
+      <div className='App'>        
+        <BrowserRouter>
+          <div className="container-fluid">
             <Header />
-            <Switch>
-              <Route path="/posts">
-                <Posts />
-              </Route>
-              <Route path="/users">
-                <Users />
-              </Route>
-              <Route path="/about">
-                <About />
-              </Route>
-              <Route path="/items">
-                <Items />
-              </Route>
-              <Route path="/login">
-                <Login />
-              </Route>
-              <Route path="/register">
-                <Register />
-              </Route>
-              <Route path="/dashboard" component={Dashboard} />
-              <Route path="/">
-                <Home />
-              </Route>             
-            </Switch>            
           </div>
-          <Footer />    
-        </Router>       
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/posts/:id" exact={true} element={<Post />} />
+            <Route path="/posts" element={<Posts />} />            
+            <Route path="/about" element={<About />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/dashboard" component={<Dashboard />} />
+          </Routes>
+          <Footer />
+        </BrowserRouter>
       </div>  
   );
 }

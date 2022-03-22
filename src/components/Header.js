@@ -2,6 +2,7 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { logoutUser } from "../store/actions/authActions";
+import logo from '../images/logo.png';
 
 const Header = () => {
     const {login_status} = useSelector(state => state.auth)
@@ -15,10 +16,10 @@ const Header = () => {
 
     return (        
         <nav className="navbar navbar-expand-sm bg-light navbar-light">
-            <a className="navbar-brand" href="#"><img src="logo.png" className="app-logo"/></a>        
+            <a className="navbar-brand" href="/"><img src={logo} className="app-logo"/></a>        
             <ul className="navbar-nav me-auto">
                 <li className="nav-item">
-                    <Link to="/home" className="nav-link">Home</Link>
+                    <Link to="/" className="nav-link">Home</Link>
                 </li>
                 <li className="nav-item">
                     <Link to="/posts" className="nav-link">Posts</Link>

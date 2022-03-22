@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import getPosts from '../../store/actions/postsActions';
 //import PostAdd from './PostAdd';
 import PostModal from '../../elements/modals/PostModal';
+import { Link } from 'react-router-dom';
 
 class Posts extends React.Component {
 
@@ -25,12 +26,17 @@ class Posts extends React.Component {
                         </button>
                         <PostModal />
                     </div>
-                </div>
-                             
+                </div>       
                 {posts.map(u => 
                     <React.Fragment key={u.id}>
-                        <h3 >{u.title}</h3>
-                        <p>{u.body}</p> 
+                        <Link to={`/posts/${u.id}`}>
+                            <div className='card mb-2'>
+                                <div className='card-body'>
+                                    <h3 >{u.title}</h3>
+                                    <p>{u.body}</p>
+                                </div>                                
+                            </div>
+                        </Link>                        
                     </React.Fragment>
                 )}
             </div>

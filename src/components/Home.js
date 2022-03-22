@@ -32,8 +32,7 @@ const Home = () => {
                         </div>
                     </div>
                 </Slider>
-            </div>    
-        
+            </div>
             <Services />
         </div>        
     )

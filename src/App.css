@@ -50,3 +50,12 @@
     color: rgb(249, 252, 255);    
     width: 100%; 
 }
+
+a {
+    text-decoration: none;
+    
+}
+
+.card h3, p{
+    text-transform: capitalize;
+}

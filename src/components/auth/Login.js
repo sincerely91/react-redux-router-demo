@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+//import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import { getLoginUser } from "../../store/actions/authActions";
 
 const Login = () => {
@@ -16,7 +16,7 @@ const Login = () => {
     }
 
     const dispatch = useDispatch();
-    const history = useHistory();
+    //const history = useHistory();
 
     const handleSubmit = () => {
 
@@ -27,7 +27,7 @@ const Login = () => {
         }
             
         dispatch(getLoginUser(formdata))
-        history.push('/dashboard')
+        //history.push('/dashboard')
 
     }
 
