@@ -32,7 +32,10 @@ const Header = () => {
                 </li> */}
                 <li className="nav-item">
                     <Link to="/about" className="nav-link">About</Link>
-                </li>                                              
+                </li>
+                {/* <li className="nav-item">
+                    <Link to="/products" className="nav-link">Products</Link>
+                </li>*/}
             </ul>            
                 
             {login_status ? (

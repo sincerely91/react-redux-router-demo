@@ -12,6 +12,7 @@ import Register from './components/auth/Register';
 import Dashboard from './components/user/Dashboard';
 import Footer from './components/Footer';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Products from './components/products/Products';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
             <Route path="/posts/:id" exact={true} element={<Post />} />
             <Route path="/posts" element={<Posts />} />            
             <Route path="/about" element={<About />} />
+            <Route path="/products" element={<Products /> } />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/dashboard" component={<Dashboard />} />

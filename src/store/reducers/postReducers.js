@@ -1,5 +1,6 @@
 import { GET_POSTS } from "../types";
 import { ADD_POST } from "../types";
+//import { GET_POST } from "../types";
 
 const initialState = {
     posts: [],

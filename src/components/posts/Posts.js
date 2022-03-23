@@ -26,19 +26,24 @@ class Posts extends React.Component {
                         </button>
                         <PostModal />
                     </div>
+                </div>
+                <div className="row">
+                    {posts.map(u => 
+                        <React.Fragment key={u.id}>
+                            <div className='col-md-3 mb-3'>
+                                <Link to={`/posts/${u.id}`}>                                    
+                                    <div className='card h-100'>
+                                        <div className='card-body'>
+                                            <h3 >{u.title}</h3>
+                                            <p>{u.body}</p>
+                                        </div>                                
+                                    </div>                     
+                                </Link>
+                            </div>                         
+                        </React.Fragment>
+                    )}
                 </div>       
-                {posts.map(u => 
-                    <React.Fragment key={u.id}>
-                        <Link to={`/posts/${u.id}`}>
-                            <div className='card mb-2'>
-                                <div className='card-body'>
-                                    <h3 >{u.title}</h3>
-                                    <p>{u.body}</p>
-                                </div>                                
-                            </div>
-                        </Link>                        
-                    </React.Fragment>
-                )}
+                
             </div>
         )
     }
