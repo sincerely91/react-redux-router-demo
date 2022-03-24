@@ -1,4 +1,10 @@
-import {ADD_POST, GET_POSTS, POST_ERROR} from '../types';
+import {
+    ADD_POST, 
+    DEL_POST, 
+    DEL_POST_ERR, 
+    GET_POSTS, 
+    POST_ERROR
+} from '../types';
 import axios from 'axios';
 
 const getPosts = () => {
@@ -19,6 +25,8 @@ const getPosts = () => {
     }
     
 }
+
+export default getPosts;
 
 export const addPost = (formdata) => {
     return async (dispatch) => {
@@ -41,5 +49,21 @@ export const addPost = (formdata) => {
     }
 }
 
-
-export default getPosts;
+export const delPost = (id) => {
+    return async (dispatch) => {
+        try{
+           axios.delete('https://jsonplaceholder.typicode.com/posts/'+id)
+           .then((res) => {
+               dispatch({
+                   type: DEL_POST,
+                   payload: res.data
+               })
+           })
+        } catch (error) {
+            dispatch({
+                type: DEL_POST_ERR,
+                payload: console.log(error)
+            })
+        } 
+    }
+}
