@@ -1,12 +1,19 @@
-import React from 'react'
-import {connect, useSelector} from 'react-redux';
+import React, { useEffect } from 'react'
+import {connect, useDispatch, useSelector} from 'react-redux';
 import getPosts from '../../store/actions/postsActions';
+import { delPost } from '../../store/actions/postsActions';
 //import PostAdd from './PostAdd';
 import PostModal from '../../elements/modals/PostModal';
 import { Link } from 'react-router-dom';
 
 const Posts = () => {
-    const posts = useSelector(state => state.posts)
+    const {posts} = useSelector(state => state.posts)
+
+    const dispatch = useDispatch()
+
+    useEffect(() => {
+        dispatch(getPosts())
+    }, [])
     
     //console.log(posts)
 
@@ -28,16 +35,16 @@ const Posts = () => {
                 {posts.map(u => 
                     <React.Fragment key={u.id}>
                         <div className='col-md-3 mb-3'>                                  
-                                <div className='card h-100'>
-                                    <div className='card-body'>
-                                        <h3 >{u.title}</h3>
-                                        <p>{u.body}</p>
-                                    </div>
-                                    <div className='card-footer'>
-                                        <button className='btn btn-default btn-danger float-start'>Delete</button>
-                                        <Link to={`/posts/${u.id}`} className='btn btn-default btn-primary float-end'>View</Link>
-                                    </div>                                
+                            <div className='card h-100'>
+                                <div className='card-body'>
+                                    <h3 >{u.title}</h3>
+                                    <p>{u.body}</p>
                                 </div>
+                                <div className='card-footer'>
+                                    <button className='btn btn-default btn-danger float-start' onClick={() => dispatch(delPost(u.id))}>Delete</button>
+                                    <Link to={`/posts/${u.id}`} className='btn btn-default btn-primary float-end'>View</Link>
+                                </div>                                
+                            </div>
                         </div>                         
                     </React.Fragment>
                 )}

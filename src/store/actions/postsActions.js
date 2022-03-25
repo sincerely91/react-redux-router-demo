@@ -54,10 +54,11 @@ export const delPost = (id) => {
         try{
            axios.delete('https://jsonplaceholder.typicode.com/posts/'+id)
            .then((res) => {
-               dispatch({
-                   type: DEL_POST,
-                   payload: res.data
-               })
+                //console.log(res.data)
+                dispatch({
+                    type: DEL_POST,
+                    payload: id
+                })
            })
         } catch (error) {
             dispatch({
