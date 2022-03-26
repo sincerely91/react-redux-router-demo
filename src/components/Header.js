@@ -1,15 +1,15 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { logoutUser } from "../store/actions/authActions";
 import logo from '../images/logo.png';
 
 const Header = () => {
     const {login_status} = useSelector(state => state.auth)
-    const { user } = useSelector(state => state.auth) 
-    
-    const dispatch = useDispatch();
-    
+    const { user } = useSelector(state => state.auth)
+    const dispatch = useDispatch()
+    const location = useLocation()
+
     const logout = () => {
         dispatch(logoutUser())
     }
@@ -45,15 +45,15 @@ const Header = () => {
                             <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
                                 {user.username}
                             </a>
-
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
                                 <li className="nav-item">
-                                    <Link to="/" className="dropdown-item" onClick={logout}>
-                                        Logout
-                                    </Link>
+                                    <Link to="/dashboard" className="dropdown-item">Dashboard</Link>                                    
+                                </li>
+                                <li className="nav-item">
+                                    <Link to="/account" className="dropdown-item">Account</Link>                                    
+                                </li>
+                                <li className="nav-item">
+                                    <Link to={location.pathname} className="dropdown-item" onClick={logout}>Logout</Link>                                    
                                 </li>
                             </ul>
                         </div>                      

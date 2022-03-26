@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 //import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import { getLoginUser } from "../../store/actions/authActions";
 
@@ -15,8 +16,8 @@ const Login = () => {
         setPassword(e.target.value)
     }
 
-    const dispatch = useDispatch();
-    //const history = useHistory();
+    const dispatch = useDispatch()
+    const navigate = useNavigate()
 
     const handleSubmit = () => {
 
@@ -27,7 +28,7 @@ const Login = () => {
         }
             
         dispatch(getLoginUser(formdata))
-        //history.push('/dashboard')
+        navigate('/')
 
     }
 

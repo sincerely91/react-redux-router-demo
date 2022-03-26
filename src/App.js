@@ -16,7 +16,7 @@ import Products from './components/products/Products';
 
 function App() {
   return (
-      <div className='App'>        
+      <div className='App'>
         <BrowserRouter>
           <div className="container-fluid">
             <Header />

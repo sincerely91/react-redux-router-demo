@@ -56,6 +56,10 @@ a {
     
 }
 
-.card h3, p{
+.card h4, p{
     text-transform: capitalize;
+}
+
+.dropdown a {
+    min-width: 200px;
 }
