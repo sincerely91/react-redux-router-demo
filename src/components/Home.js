@@ -16,7 +16,7 @@ const Home = () => {
     };
 
     return (   
-        <div className='container-fluid'>
+        <div className='container'>
             <div className='row text-center mt-1'>
                 <Slider {...settings}>
                     <div>
