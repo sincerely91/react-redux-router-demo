@@ -6,6 +6,7 @@ import Header from './components/Header';
 import Home from './components/Home';
 import About from './components/About';
 // import Users from './components/users/Users';
+import Modal from './components/Modal';
 import Login from './components/auth/Login';
 import Register from './components/auth/Register';
 // import Items from './components/items/Items';
@@ -26,6 +27,7 @@ function App() {
             <Route path="/posts/:id" exact={true} element={<Post />} />
             <Route path="/posts" element={<Posts />} />            
             <Route path="/about" element={<About />} />
+            <Route path="/modal" element={<Modal />} />
             <Route path="/products" element={<Products /> } />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />

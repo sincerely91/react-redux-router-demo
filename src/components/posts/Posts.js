@@ -1,8 +1,8 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import {useDispatch, useSelector} from 'react-redux';
 import getPosts from '../../store/actions/postsActions';
 import { delPost } from '../../store/actions/postsActions';
-//import PostAdd from './PostAdd';
+import PostAdd from './PostAdd';
 import PostModal from '../../elements/modals/PostModal';
 import { Link } from 'react-router-dom';
 
@@ -10,7 +10,17 @@ const Posts = () => {
     const {posts} = useSelector(state => state.posts)
     const {login_status} = useSelector(state => state.auth)
     const dispatch = useDispatch()
-    
+
+    const [display, setDisplay] = useState('none')
+
+    const handleDisplay = () => {
+        setDisplay('block')
+    }
+
+    const handleClose = () => {
+        setDisplay('none')
+    }
+
 
     useEffect(() => {
         dispatch(getPosts())
@@ -25,11 +35,11 @@ const Posts = () => {
                 </div>
                 <div className="col-md-6">
                 {(login_status)?(
-                    <button type="button" className="btn btn-primary float-end" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    <button type="button" className="btn btn-primary float-end" onClick={handleDisplay}>
                         Add Post
                     </button>
                     ):''}
-                    <PostModal />
+                    <PostModal handleClose={handleClose} dataDisplay={display}/>
                 </div>
             </div>
             <div className="row">
