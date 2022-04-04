@@ -10,18 +10,13 @@ const Posts = () => {
     const {posts} = useSelector(state => state.posts)
     const {login_status} = useSelector(state => state.auth)
     const dispatch = useDispatch()
-
     const [display, setDisplay] = useState('none')
-
     const handleDisplay = () => {
         setDisplay('block')
     }
-
     const handleClose = () => {
         setDisplay('none')
     }
-
-
     useEffect(() => {
         dispatch(getPosts())
     }, [])
@@ -39,7 +34,7 @@ const Posts = () => {
                         Add Post
                     </button>
                     ):''}
-                    <PostModal handleClose={handleClose} dataDisplay={display}/>
+                    <PostAdd handleClose={handleClose} dataDisplay={display} />
                 </div>
             </div>
             <div className="row">
