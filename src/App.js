@@ -14,6 +14,7 @@ import Dashboard from './components/user/Dashboard';
 import Footer from './components/Footer';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Products from './components/products/Products';
+import Email from './components/user/Email';
 
 function App() {
   return (
@@ -22,8 +23,8 @@ function App() {
           <div className="container-fluid">
             <Header />
           </div>
-          <Routes>
-            <Route path="/" element={<Home />} />
+          <Routes>            
+            <Route path="/" element={<Home />} />            
             <Route path="/posts/:id" exact={true} element={<Post />} />
             <Route path="/posts" element={<Posts />} />            
             <Route path="/about" element={<About />} />
@@ -31,7 +32,9 @@ function App() {
             <Route path="/products" element={<Products /> } />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
-            <Route path="/dashboard" component={<Dashboard />} />
+            <Route path='/dashboard' element={<Dashboard />}>
+              <Route path='email' element={<Email />} />
+            </Route>        
           </Routes>
           <Footer />
         </BrowserRouter>
