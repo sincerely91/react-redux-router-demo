@@ -7,6 +7,7 @@ const Dashboard = () => {
     const onClick = () => {
         console.log('INPUT VALUE: ', inputRef.current?.value);
     }
+    
 
     const onClickFocus = () => {
         console.log('Focus input');
