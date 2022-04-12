@@ -14,7 +14,7 @@ import Dashboard from './components/user/Dashboard';
 import Footer from './components/Footer';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Products from './components/products/Products';
-import Email from './components/user/Email';
+import Account from './components/user/Account';
 
 function App() {
   return (
@@ -31,10 +31,9 @@ function App() {
             <Route path="/modal" element={<Modal />} />
             <Route path="/products" element={<Products /> } />
             <Route path="/login" element={<Login />} />
-            <Route path="/register" element={<Register />} />
-            <Route path='/dashboard' element={<Dashboard />}>
-              <Route path='email' element={<Email />} />
-            </Route>        
+            <Route path="/register" element={<Register />} />           
+            <Route path='/dashboard' element={<Dashboard />} />
+            <Route path='/account' element={<Account />} />  
           </Routes>
           <Footer />
         </BrowserRouter>

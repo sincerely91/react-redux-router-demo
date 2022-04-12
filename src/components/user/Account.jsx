@@ -3,8 +3,9 @@ import React from "react";
 const Account = () => {
 
     return (
-        <div>
-            <h1>Profile</h1>
+        <div className="container">
+            <h1>Account</h1>
+            
         </div>
     )
 }
