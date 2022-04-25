@@ -16,6 +16,7 @@ const PostAdd = (props) => {
     const handleBody = (e) => {
         setBody(e.target.value)
     }
+    
     const navigate = useNavigate()
     const dispatch = useDispatch()
 

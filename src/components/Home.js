@@ -6,7 +6,6 @@ import "slick-carousel/slick/slick-theme.css";
 import Services from './HomeSections/Services';
 
 const Home = () => {
-
     var settings = {
         dots: true,
         infinite: true,
