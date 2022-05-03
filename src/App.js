@@ -13,6 +13,7 @@ import Footer from './components/Footer';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Products from './components/products/Products';
 import Account from './components/user/Account';
+import Layout from './components/user/Layout';
 
 function App() {
   return (
@@ -30,7 +31,8 @@ function App() {
             <Route path="products" element={<Products /> } />
             <Route path="login" element={<Login />} />
             <Route path="register" element={<Register />} />           
-            <Route path='dashboard' element={<Dashboard />}>
+            <Route path='user' element={<Layout />}>
+              <Route path='dashboard' element={<Dashboard />} />
               <Route path='account' element={<Account />} />
             </Route>                        
           </Routes>

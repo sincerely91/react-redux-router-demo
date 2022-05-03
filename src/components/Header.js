@@ -50,10 +50,10 @@ const Header = () => {
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                                 <li className="nav-item">
-                                    <Link to="/dashboard" className="dropdown-item">Dashboard</Link>                                    
+                                    <Link to="/user/dashboard" className="dropdown-item">Dashboard</Link>                                    
                                 </li>
                                 <li className="nav-item">
-                                    <Link to="/account" className="dropdown-item">Account</Link>                                    
+                                    <Link to="/user/account" className="dropdown-item">Account</Link>                                    
                                 </li>
                                 <li className="nav-item">
                                     <Link to={location.pathname} className="dropdown-item" onClick={logout}>Logout</Link>                                    
