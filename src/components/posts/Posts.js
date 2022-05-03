@@ -3,7 +3,7 @@ import {useDispatch, useSelector} from 'react-redux';
 import getPosts from '../../store/actions/postsActions';
 import { delPost } from '../../store/actions/postsActions';
 import PostAdd from './PostAdd';
-import PostModal from '../../elements/modals/PostModal';
+//import PostModal from '../../elements/modals/PostModal';
 import { Link } from 'react-router-dom';
 
 const Posts = () => {

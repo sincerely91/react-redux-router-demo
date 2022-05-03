@@ -23,15 +23,16 @@ function App() {
           </div>
           <Routes>            
             <Route path="/" element={<Home />} />            
-            <Route path="/posts/:id" exact={true} element={<Post />} />
-            <Route path="/posts" element={<Posts />} />            
-            <Route path="/about" element={<About />} />
-            <Route path="/modal" element={<Modal />} />
-            <Route path="/products" element={<Products /> } />
-            <Route path="/login" element={<Login />} />
-            <Route path="/register" element={<Register />} />           
-            <Route path='/dashboard' element={<Dashboard />} />
-            <Route path='/account' element={<Account />} />  
+            <Route path="posts/:id" exact={true} element={<Post />} />
+            <Route path="posts" element={<Posts />} />            
+            <Route path="about" element={<About />} />
+            <Route path="modal" element={<Modal />} />
+            <Route path="products" element={<Products /> } />
+            <Route path="login" element={<Login />} />
+            <Route path="register" element={<Register />} />           
+            <Route path='dashboard' element={<Dashboard />}>
+              <Route path='account' element={<Account />} />
+            </Route>                        
           </Routes>
           <Footer />
         </BrowserRouter>

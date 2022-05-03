@@ -9,13 +9,13 @@ const Home = () => {
     var settings = {
         dots: true,
         infinite: true,
-        speed: 500,
+        speed: 800,
         slidesToShow: 1,
         slidesToScroll: 1
     };
 
     return (   
-        <div className='container'>
+        <div className='container-fluid'>
             <div className='row text-center mt-1'>
                 <Slider {...settings}>
                     <div>
