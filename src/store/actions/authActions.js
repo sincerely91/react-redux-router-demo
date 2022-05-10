@@ -34,6 +34,7 @@ export const getLoginUser = (formdata) => {
         }
         */
         sessionStorage.setItem("token", formdata.token)
+        //dispatching action to login
         dispatch({
             type: LOGIN,
             payload: formdata
