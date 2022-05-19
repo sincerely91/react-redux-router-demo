@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, Outlet } from 'react-router-dom';
+import { Outlet, NavLink} from 'react-router-dom';
 
 const Layout = () => {
     return (
@@ -7,12 +7,10 @@ const Layout = () => {
             <div className='row'>
                 <div className='col-md-3'>
                     <ul class="list-group">
-                        <Link to="/user/dashboard" className="list-group-item">Dashboard</Link>
-                        {/* <li class="list-group-item active" aria-current="true">Dashboard</li> */}
-                        <Link to="/user/account" className="list-group-item">Account</Link>
-                        <li class="list-group-item">Timezone</li>
-                        <li class="list-group-item">Settings</li>
-                       
+                        <li><NavLink to="/user/dashboard" className={({ isActive }) => (isActive ? 'list-group-item active' : 'inactive list-group-item')}>Dashboard</NavLink></li>
+                        <li><NavLink to="/user/account" className={({ isActive }) => (isActive ? 'list-group-item active' : 'inactive list-group-item')}>Account</NavLink></li>
+                        <li><NavLink to="/user/addresses" className={({ isActive }) => (isActive ? 'list-group-item active' : 'inactive list-group-item')}>Addresses</NavLink></li>
+                        <li><NavLink to="/user/settings" className={({ isActive }) => (isActive ? 'list-group-item active' : 'inactive list-group-item')}>Settings</NavLink></li>
                     </ul>
                 </div>
                 <div className='col-md-9'>

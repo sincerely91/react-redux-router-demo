@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, NavLink } from "react-router-dom";
 import { logoutUser } from "../store/actions/authActions";
 import logo from '../images/logo.png';
 
@@ -18,11 +18,11 @@ const Header = () => {
         <nav className="navbar navbar-expand-sm bg-light navbar-light">
             <a className="navbar-brand" href="/"><img src={logo} className="app-logo"/></a>        
             <ul className="navbar-nav me-auto">
-                <li className="nav-item">
-                    <Link to="/" className="nav-link">Home</Link>
+                <li className="nav-item">                    
+                    <NavLink to="/" className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}>Home</NavLink>
                 </li>
-                <li className="nav-item">
-                    <Link to="/posts" className="nav-link">Posts</Link>
+                <li className="nav-item">                    
+                    <NavLink to="/posts" className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}>Posts</NavLink>
                 </li>
                 {/* <li className="nav-item">
                     <Link to="/users" className="nav-link">Users</Link>
@@ -30,8 +30,8 @@ const Header = () => {
                 <li className="nav-item">
                     <Link to="/items" className="nav-link">Items</Link>
                 </li> */}
-                <li className="nav-item">
-                    <Link to="/about" className="nav-link">About</Link>
+                <li className="nav-item">                    
+                    <NavLink to="/about" className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}>About</NavLink>
                 </li>
                 {/* <li className="nav-item">
                     <Link to="/modal" className="nav-link">Modal</Link>
