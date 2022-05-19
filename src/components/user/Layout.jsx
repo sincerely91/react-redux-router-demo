@@ -10,9 +10,9 @@ const Layout = () => {
                         <Link to="/user/dashboard" className="list-group-item">Dashboard</Link>
                         {/* <li class="list-group-item active" aria-current="true">Dashboard</li> */}
                         <Link to="/user/account" className="list-group-item">Account</Link>
-                        <li class="list-group-item">Settings</li>
                         <li class="list-group-item">Timezone</li>
-                        <li class="list-group-item">Logout</li>
+                        <li class="list-group-item">Settings</li>
+                       
                     </ul>
                 </div>
                 <div className='col-md-9'>
