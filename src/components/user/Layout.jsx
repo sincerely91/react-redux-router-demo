@@ -7,10 +7,12 @@ const Layout = () => {
             <div className='row'>
                 <div className='col-md-3'>
                     <ul class="list-group">
-                        <li><NavLink to="/user/dashboard" className={({ isActive }) => (isActive ? 'list-group-item active' : 'inactive list-group-item')}>Dashboard</NavLink></li>
-                        <li><NavLink to="/user/account" className={({ isActive }) => (isActive ? 'list-group-item active' : 'inactive list-group-item')}>Account</NavLink></li>
-                        <li><NavLink to="/user/addresses" className={({ isActive }) => (isActive ? 'list-group-item active' : 'inactive list-group-item')}>Addresses</NavLink></li>
-                        <li><NavLink to="/user/settings" className={({ isActive }) => (isActive ? 'list-group-item active' : 'inactive list-group-item')}>Settings</NavLink></li>
+                        <NavLink to="/user/dashboard" className={({ isActive }) => (isActive ? 'list-group-item active' : 'inactive list-group-item')}>Dashboard</NavLink>
+                        <NavLink to="/user/posts" className={({ isActive }) => (isActive ? 'list-group-item active' : 'inactive list-group-item')}>Posts</NavLink>
+                        <NavLink to="/user/account" className={({ isActive }) => (isActive ? 'list-group-item active' : 'inactive list-group-item')}>Account</NavLink>
+                        <NavLink to="/user/addresses" className={({ isActive }) => (isActive ? 'list-group-item active' : 'inactive list-group-item')}>Addresses</NavLink>
+                        
+                        <NavLink to="/user/settings" className={({ isActive }) => (isActive ? 'list-group-item active' : 'inactive list-group-item')}>Settings</NavLink>
                     </ul>
                 </div>
                 <div className='col-md-9'>

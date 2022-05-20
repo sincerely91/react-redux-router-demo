@@ -21,13 +21,13 @@ const Home = () => {
                     <div>
                         <img src='slide1.jpg' style={{height: "550px", width: "100vw"}}/>
                         <div className="slider-text">
-                            <h1>Lorem ipsum</h1>
+                            <h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lobortis.</h1>
                         </div>
                     </div>
                     <div>
                         <img src='slide2.jpg' style={{height: "550px", width: "100vw"}}/>
                         <div className="slider-text">
-                            <h1>Lorem ipsum</h1>
+                            <h1>Donec at volutpat ex, vitae bibendum diam. Fusce maximus fermentum.</h1>
                         </div>
                     </div>
                 </Slider>
