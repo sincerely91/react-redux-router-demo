@@ -1,5 +1,6 @@
 import './App.css';
 import React from 'react';
+import { useSelector } from 'react-redux';
 import Posts from './components/posts/Posts';
 import Post from './components/posts/Post';
 import Header from './components/Header';
@@ -19,6 +20,9 @@ import Addresses from './components/user/Addresses';
 import UserPosts from './components/user/Posts';
 
 function App() {
+  const {login_status} = useSelector(state => state.auth)
+  console.log(login_status);
+
   return (
       <div className='App'>
         <BrowserRouter>
