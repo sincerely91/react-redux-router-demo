@@ -34,9 +34,9 @@ const Login = () => {
 
 
     return (
-        <div className="login-form">
+        <div className="login-form mt-4">
             <h1>Login</h1>
-            <form>
+            <form onSubmit={handleSubmit} >
                 <div className="mb-3">
                     <label for="exampleInputEmail1" className="form-label">Email address</label>
                     <input type="email" value={email} onChange={(e) => handleEmail(e)} className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
@@ -45,7 +45,7 @@ const Login = () => {
                     <label for="exampleInputPassword1" className="form-label">Password</label>
                     <input type="password" value={password} onChange={(e) => handlePassword(e)}  className="form-control" id="exampleInputPassword1" />
                 </div>
-                <button type="button" onClick={handleSubmit} className="btn btn-primary">Submit</button>
+                <input type="submit" value="Submit" className="btn btn-primary" />
             </form>
         </div>
     )
