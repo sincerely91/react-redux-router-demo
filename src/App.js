@@ -21,7 +21,7 @@ import UserPosts from './components/user/Posts';
 
 function App() {
   const {login_status} = useSelector(state => state.auth)
-  console.log(login_status);
+  //console.log(login_status);
 
   return (
       <div className='App'>
