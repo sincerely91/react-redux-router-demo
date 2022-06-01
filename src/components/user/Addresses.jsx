@@ -26,7 +26,7 @@ const Addresses = () => {
                 <div className="col-md-4">
                     <div className="card" >
                         <div className="card-body">
-                            <h5 className="card-title">John Dev</h5>
+                            <h5 className="card-title">Peter</h5>
                             <h6 className="card-subtitle mb-2 text-muted">8965745812</h6>
                             <p className="card-text">678, 2nd Floor, Sendra vikas colony, Sikandara, Lucknow</p>
                             <a href="#" className="card-link">Edit</a>
@@ -37,7 +37,7 @@ const Addresses = () => {
                 <div className="col-md-4">
                     <div className="card" >
                         <div className="card-body">
-                            <h5 className="card-title">John Dev</h5>
+                            <h5 className="card-title">Brandon</h5>
                             <h6 className="card-subtitle mb-2 text-muted">8965745812</h6>
                             <p className="card-text">678, 2nd Floor, Sendra vikas colony, Sikandara, Lucknow</p>
                             <a href="#" className="card-link">Edit</a>
