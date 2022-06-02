@@ -9,11 +9,10 @@ export const LOGIN = 'LOGIN';
 export const LOGIN_ERROR = 'LOGIN_ERROR';
 export const LOGOUT = 'LOGOUT';
 
-//User Action Types
-//ADDRESS
-export const ADD_ADDRESS = 'ADD_ADDRESS';
-export const ADD_ADDRESS_ERROR = 'ADD_ADDRESS_ERROR';
-export const EDIT_ADDRESS = 'EDIT_ADDRESS';
-export const EDIT_ADDRESS_ERROR = 'EDIT_ADDRESS_ERROR';
-export const DEL_ADDRESS = 'DEL_ADDRESS';
-export const DEL_ADDRESS__ERROR = 'DEL_ADDRESS__ERROR';
+//User Post actions
+export const USER_GET_POSTS = 'USER_GET_POSTS';
+export const USER_GET_POSTS_ERROR = 'USER_GET_POSTS_ERROR';
+export const USER_ADD_POSTS = 'USER_ADD_POSTS';
+export const USER_ADD_POSTS_ERROR = 'USER_ADD_POSTS_ERROR';
+export const USER_DEL_POST = 'USER_DEL_POST';
+export const USER_DEL_POST_ERROR = 'USER_DEL_POST_ERROR';

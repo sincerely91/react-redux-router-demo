@@ -16,7 +16,6 @@ import Products from './components/products/Products';
 import Account from './components/user/Account';
 import Layout from './components/user/Layout';
 import Settings from './components/user/Settings';
-import Addresses from './components/user/Addresses';
 import UserPosts from './components/user/Posts';
 
 function App() {
@@ -42,7 +41,6 @@ function App() {
               <Route path='dashboard' element={<Dashboard />} />
               <Route path='posts' element={ <UserPosts />} />
               <Route path='account' element={<Account />} />
-              <Route path='addresses' element={<Addresses />} />
               <Route path='settings' element={<Settings />} />
             </Route>                        
           </Routes>
