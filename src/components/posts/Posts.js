@@ -7,7 +7,7 @@ import PostAdd from './PostAdd';
 import { Link } from 'react-router-dom';
 
 const Posts = () => {
-    const {posts} = useSelector(state => state.posts)
+    const {posts, currentPage} = useSelector(state => state.posts)
     const {login_status} = useSelector(state => state.auth)
     const dispatch = useDispatch()
     const [display, setDisplay] = useState('none')
@@ -20,6 +20,12 @@ const Posts = () => {
     useEffect(() => {
         dispatch(getPosts())
     }, [])
+
+    const page_list = [];
+    for (let page = 1; page < 11; page++) {
+        let active = (page == currentPage) ? 'active' : ''; 
+        page_list.push(<li className={active+' page-item'}><button className="page-link" onClick={() => dispatch(getPosts(page, 8))}>{page}</button></li>)
+    }
 
     return (
         <div className="container">
@@ -38,6 +44,15 @@ const Posts = () => {
                 </div>
             </div>
             <div className="row">
+                <nav aria-label="Page navigation example">
+                    <ul className="pagination justify-content-end">
+                        <li className="page-item"><button className="page-link" onClick={() => dispatch(getPosts(currentPage-1, 8))}>Previous</button></li>
+                        {page_list}
+                        <li className="page-item"><button className="page-link" onClick={() => dispatch(getPosts(currentPage+1, 8))}>Next</button></li>
+                    </ul>
+                </nav>
+            </div>
+            <div className="row">
                 {[...posts].reverse().map(u => 
                     <React.Fragment key={u.id}>
                         <div className='col-md-3 mb-3'>                                  
@@ -51,14 +66,21 @@ const Posts = () => {
                                         <button className='btn btn-default btn-danger float-start' onClick={() => dispatch(delPost(u.id))}>Delete</button>
                                         {/* <Link to={`/posts/${u.id}`} className='btn btn-default btn-primary float-end'>View</Link> */}
                                     </div>
-                                ):''}
-                                                             
+                                ):''}                   
                             </div>
                         </div>                         
                     </React.Fragment>
                 )}
-            </div>       
-        
+            </div>
+            <div className="row">
+                <nav aria-label="Page navigation example">
+                    <ul className="pagination justify-content-end">
+                        <li className="page-item"><button className="page-link" onClick={() => dispatch(getPosts(currentPage-1, 8))}>Previous</button></li>
+                        {page_list}
+                        <li className="page-item"><button className="page-link" onClick={() => dispatch(getPosts(currentPage+1, 8))}>Next</button></li>
+                    </ul>
+                </nav>
+            </div>
         </div>
     )
 }

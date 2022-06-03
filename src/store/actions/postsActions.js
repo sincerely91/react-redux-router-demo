@@ -7,13 +7,17 @@ import {
 } from '../types';
 import axios from 'axios';
 
-const getPosts = () => {
+const getPosts = (page=1, limit=8) => {
     return async (dispatch) => {
         try{
-            const res = await axios.get('https://jsonplaceholder.typicode.com/posts')        
+            const res = await axios.get('https://jsonplaceholder.typicode.com/posts?_page='+page+'&_limit='+limit)
+            const res_data = {
+                data: res.data,
+                page: page
+            }        
             dispatch( {
                 type: GET_POSTS,
-                payload: res.data
+                payload: res_data
             })
         }
         catch(e){
