@@ -5,6 +5,7 @@ import { DEL_POST } from "../types";
 
 const initialState = {
     posts: [],
+    currentPage: 1,
     loading: true
 }
 
@@ -14,7 +15,8 @@ export default function(state = initialState, action ){
         case GET_POSTS:
         return {
             ...state,
-            posts: action.payload,
+            posts: action.payload.data,
+            currentPage: action.payload.page,
             loading: false
         }
         case ADD_POST:
