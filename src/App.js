@@ -1,6 +1,6 @@
 import './App.css';
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, } from 'react-redux';
 import Posts from './components/posts/Posts';
 import Post from './components/posts/Post';
 import Header from './components/Header';
@@ -11,15 +11,16 @@ import Login from './components/auth/Login';
 import Register from './components/auth/Register';
 import Dashboard from './components/user/Dashboard';
 import Footer from './components/Footer';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Products from './components/products/Products';
 import Account from './components/user/Account';
 import Layout from './components/user/Layout';
 import Settings from './components/user/Settings';
 import UserPosts from './components/user/Posts';
+import Alert from './elements/alerts/Alert';
 
 function App() {
-  const {login_status} = useSelector(state => state.auth)
+  const { login_status } = useSelector(state => state.auth)
   //console.log(login_status);
 
   return (
@@ -27,6 +28,7 @@ function App() {
         <BrowserRouter>
           <div className="container-fluid">
             <Header />
+            <Alert />
           </div>
           <Routes>            
             <Route path="/" element={<Home />} />            
@@ -37,7 +39,7 @@ function App() {
             <Route path="products" element={<Products /> } />
             <Route path="login" element={<Login />} />
             <Route path="register" element={<Register />} />           
-            <Route path='user' element={<Layout />}>
+            <Route path='user' element={(login_status) ? <Layout /> : <Navigate to="/login" />}>
               <Route path='dashboard' element={<Dashboard />} />
               <Route path='posts' element={ <UserPosts />} />
               <Route path='account' element={<Account />} />
