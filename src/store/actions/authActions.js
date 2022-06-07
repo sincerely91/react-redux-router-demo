@@ -1,4 +1,4 @@
-import { LOGIN, LOGIN_ERROR, LOGOUT } from "../types";
+import { LOGIN, LOGIN_ERROR, LOGOUT, SHOW_ERROR } from "../types";
 import axios from 'axios';
 
 export const getLoginUser = (formdata) => {

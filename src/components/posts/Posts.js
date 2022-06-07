@@ -24,6 +24,7 @@ const Posts = () => {
     return (
         <div className="container">
             {/* <PostAdd /> */}
+            
             <div className='row mb-4 mt-2'>
                 <div className="col-md-6">
                     <h2>Available Posts</h2>                    
