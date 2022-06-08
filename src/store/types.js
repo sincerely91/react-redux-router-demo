@@ -22,3 +22,4 @@ export const USER_DEL_POST_ERROR = 'USER_DEL_POST_ERROR';
 
 //Error types
 export const SHOW_ERROR = 'SHOW_ERROR';
+export const HIDE_ERROR = 'HIDE_ERROR';

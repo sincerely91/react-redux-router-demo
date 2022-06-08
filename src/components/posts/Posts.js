@@ -22,7 +22,7 @@ const Posts = () => {
     }, [])
 
     const page_list = [];
-    for (let page = 1; page < 11; page++) {
+    for (let page = 1; page < 6; page++) {
         let active = (page == currentPage) ? 'active' : ''; 
         page_list.push(<li className={active+' page-item'}><button className="page-link" onClick={() => dispatch(getPosts(page, 8))}>{page}</button></li>)
     }

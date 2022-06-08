@@ -3,27 +3,29 @@ import {
     DEL_POST, 
     DEL_POST_ERR, 
     GET_POSTS, 
-    POST_ERROR
+    POST_ERROR,
+    SHOW_ERROR,
+    HIDE_ERROR
 } from '../types';
 import axios from 'axios';
 
 const getPosts = (page=1, limit=8) => {
+    const api_url = process.env.REACT_APP_API_URL;
     return async (dispatch) => {
         try{
-            const res = await axios.get('https://jsonplaceholder.typicode.com/posts?_page='+page+'&_limit='+limit)
+            //const res = await axios.get('https://jsonplaceholder.typicode.com/posts?_page='+page+'&_limit='+limit)
+            const res = await axios.get(api_url+'/posts?_page='+page+'&_limit='+limit);
             const res_data = {
                 data: res.data,
                 page: page
             }        
-            dispatch( {
-                type: GET_POSTS,
-                payload: res_data
-            })
+            dispatch({type: GET_POSTS, payload: res_data});
+            dispatch({type: HIDE_ERROR});
         }
-        catch(e){
-            dispatch( {
-                type: POST_ERROR,
-                payload: console.log(e),
+        catch(error){            
+            dispatch({
+                type: SHOW_ERROR,
+                payload: "Could not find any post! Something went wrong.",
             })
         }
     }
