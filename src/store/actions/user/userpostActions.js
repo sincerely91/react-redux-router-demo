@@ -4,7 +4,8 @@ import axios from "axios";
 export const getUserPosts = (userId) => {
     return async (dispatch) => {
         try {
-            axios.get('https://jsonplaceholder.typicode.com/users/'+userId+'/posts')
+            const api_url = process.env.REACT_APP_API_URL;
+            axios.get(api_url+'/users/'+userId+'/posts')
             .then((res) => {
                 //console.log(res.data);
                 dispatch({
