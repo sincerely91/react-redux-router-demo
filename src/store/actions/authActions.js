@@ -3,41 +3,33 @@ import axios from 'axios';
 
 export const getLoginUser = (formdata) => {
     return async (dispatch) => {
-        /*
-        try {            
-            const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjMsIm5hbWUiOiJza3VtYXIiLCJpYXQiOjE2NDU2MjAxODIsImV4cCI6MTgwMzMwMDE4Mn0.3oc-wJLrjKClbQ2goBV0nzq1boI0Iq1IwQSwlgjCimg"
-            const config = {
-                headers: { 
-                    'Authorization': `Bearer ${token}`, 
-                    'Access-Control-Allow-Origin': '*',
-                    'Content-Type': 'application/json'
-                }
-            };
-            axios.get("http://localhost/wprestapi/wp-json/wp/v2/posts", config)            
-            .then((res) => {
-                console.log(res);
+        
+        //const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjMsIm5hbWUiOiJza3VtYXIiLCJpYXQiOjE2NDU2MjAxODIsImV4cCI6MTgwMzMwMDE4Mn0.3oc-wJLrjKClbQ2goBV0nzq1boI0Iq1IwQSwlgjCimg"
+        const config = {
+            headers: { 
+                //'Authorization': `Bearer ${token}`, 
+                'Access-Control-Allow-Origin': '*',
+                'Content-Type': 'application/json'
+            }
+        };
+        const api_url = process.env.REACT_APP_API_URL;
+        axios.get(api_url+"/user", config)         
+        .then((res) => {
+            const user = res.data;
+
+            if(user.username === formdata.username && user.password === formdata.password){
+                sessionStorage.setItem("token", user.token);
                 dispatch({
                     type: LOGIN,
-                    payload: formdata
+                    payload: user
                 })
-            })
-
-            dispatch({
-                type: LOGIN,
-                payload: formdata
-            })
-        } catch (error) {
-           dispatch({
-               type: LOGIN_ERROR,
-               payload: console.log(error)
-           })
-        }
-        */
-        sessionStorage.setItem("token", formdata.token)
-        //dispatching action to login
-        dispatch({
-            type: LOGIN,
-            payload: formdata
+            }else{
+                dispatch({
+                    type: LOGIN_ERROR,
+                    payload: "Invalid credentials."
+                })
+            }
+            
         })
     } 
 }
